@@ -76,3 +76,24 @@ def Status(Ctrl, W, A, S, D,):
 if Wallnearby and Status("Ctrl", "W", "A", "S", "D") == "CtrlW":
     print("Taking cover")
 else : print("Laying Prone")
+
+
+# Multiple Return Values:
+# Python functions can return multiple values as a tuple, 
+# which can then be unpacked into separate variables.
+
+def square_and_cube(x):
+    return x**2, x**3
+
+square, cube = square_and_cube(3)
+print("Square:", square)
+print("Cube:", cube)
+
+# Retornando multiplos valores para diferentes variaveis
+# Peso Rifle e Revolver
+def Rifle_and_Revolver(x):
+    return x*4, x+0.3
+
+Rifle, Revolver = Rifle_and_Revolver(1)
+print("Peso_Rifle", Rifle, "kg")
+print("Peso_Revolver", Revolver, "kg")
