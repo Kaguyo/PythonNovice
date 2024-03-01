@@ -115,7 +115,7 @@ Weight = 58
 # Capacidade Rifle: 1-8
 # Capacidade Revolver 1-6
 # Disparos Restantes
-Rifle_Rounds = 7
+Rifle_Rounds = 6
 Revolver_Rounds = 3
 Recurve_Bow_Arrows_Left = 0
 Pistol_Rounds = 0
