@@ -18,7 +18,7 @@ else:
      print("x é menor ou igual a 5")
 
 #1.3 'if-elif-else' Statement:
-#The 'if-elif-else' statement allows you to check multiple conditions.
+#The 'if-elif-else'a statement allows you to check multiple conditions.
 x = 10
    
 if x > 10:
