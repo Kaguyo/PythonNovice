@@ -97,3 +97,13 @@ def Rifle_and_Revolver(x):
 Rifle, Revolver = Rifle_and_Revolver(1)
 print("Peso_Rifle", Rifle, "kg")
 print("Peso_Revolver", Revolver, "kg")
+
+# Calculo de juros compostos só pra sentir um gostinho do python pq o trabalho já nem me deixa mais tempo para brincar com você, amigão... :)
+C = 1000 
+
+I = 0.12 
+
+T = 10 
+
+M = C * ( 1 + I )** T
+print(M)
