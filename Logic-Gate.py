@@ -36,11 +36,14 @@ else: print('Saida: 0')
 # Composto por uma porta lógica AND, em que se é aplicado a lógica 'NOT', Qual será um simbolo circular em 
 # alguma das entradas ou da saida da porta, fazendo com que assim o valor da mesma entrada ou saída se inverta.
 
-def logic_gate_and(x):
-    return x, x, x
 
-Entrada_A, Entrada_B, Entrada_C = logic_gate_and(1)
-if Entrada_A == Entrada_B == Entrada_C: 
-    print('Saida: 1')
-else: print('Saida: 0')
 
+def  logic_gate_nand(a, b, c):
+    return not (b)
+
+Entrada_A = True
+Entrada_B = False
+Entrada_C = True
+
+resultado = logic_gate_nand(Entrada_A, Entrada_B, Entrada_C)
+print('Saida:', Entrada_A, Entrada_B, Entrada_C, ":", resultado)

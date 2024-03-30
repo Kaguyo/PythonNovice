@@ -53,7 +53,7 @@ for fruit in fruits:
         break
 
 # Continue statement
-for i in range(2, 6):
+for i in range(3, 15):
     if i == 3:
         continue
     print(i)
