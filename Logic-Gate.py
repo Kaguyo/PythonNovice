@@ -47,3 +47,15 @@ Entrada_C = True
 
 resultado = logic_gate_nand(Entrada_A, Entrada_B, Entrada_C)
 print('Saida:', Entrada_A, Entrada_B, Entrada_C, ":", resultado)
+
+
+# Logic gate XNor
+def xnor(A, B, C):
+    return (A == B) == C
+
+# Exemplo de uso
+A = True
+B = False
+C = True
+resultado = xnor(A, B, C)
+print(resultado)  # Saída: False
