@@ -56,6 +56,6 @@ def xnor(A, B, C):
 # Exemplo de uso
 A = True
 B = True
-C = True
+C = False
 resultado = xnor(A, B, C)
 print(resultado)  # Saída: False, pois C é falso e AB é C
