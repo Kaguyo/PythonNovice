@@ -1,5 +1,5 @@
 # Enemy
-Hp = 1200000
+MaxHp = 1200000
 EnemyDefense = 500
 EnemyResistance = 0.2
 
@@ -31,9 +31,11 @@ print('Enemys dmg taken increasement/loss =', Phys_Resistance)
 Hits = 4
 
 Dmg = CalculeDamage(Hits) 
-print(Dmg)
+print('Damage dealt:', Dmg / Hits, 'x',Hits)
 
 
 
-
+# HP Formula
+Hp = MaxHp - Dmg
+print('Enemys HP:', Hp)
 
