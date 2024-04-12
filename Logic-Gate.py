@@ -10,6 +10,16 @@ if Entrada_A and Entrada_B == 1:
     print('Saída AND:', 1)
 else: print('Saída AND:', 0)
 
+# -x- Diferente forma, mesmo resultado:
+
+def logic_gate_and2(a, b):
+    return 1 if a and b == 1 else 0
+
+Entrada_A = 0
+Entrada_B = 0
+Saída = logic_gate_and2(Entrada_A, Entrada_B)
+print('Saída AND2:', Saída)
+
 
 # Logic gate OR
 # Composto por uma porta lógica, com simbolo GENERALIZADO similar a um D, porém com as duas pontas curvas 
@@ -88,5 +98,11 @@ Entrada_B = 1
 Saída = xnor2(Entrada_A, Entrada_B)
 print('Saída XNOR2:', Saída)
 
+# Refazendo da forma que eu aderi antes.
 
-    
+def xnor3(a, b):
+    return (a**0, b-1)
+
+Entrada_A, Entrada_B = xnor3(0, 1)
+Saída = 1 if Entrada_A == Entrada_B else 0
+print('Saída XNOR3:', Saída)
