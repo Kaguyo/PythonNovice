@@ -5,7 +5,7 @@
 def logic_gate_and(a, b):
     return (a**0, b+1)
 
-Entrada_A, Entrada_B = logic_gate_and(0,0)
+Entrada_A, Entrada_B = logic_gate_and(0,-1)
 if Entrada_A and Entrada_B == 1: 
     print('Saída AND:', 1)
 else: print('Saída AND:', 0)
@@ -26,14 +26,25 @@ print('Saída AND2:', Saída)
 # para esquerda parecido com um formado de V curvo. Qual terá valores de entrada  indicando valor de 1 ou 0,
 # quando qualquer um for positivo, terá resultado de saída positivo (1) por ex:
 
-def logic_gate_or (a, b, c):
-    return (a, b, c)
+def logic_gate_or(a, b, c):
+    return (a, b+1, c)
 
 Entrada_A, Entrada_B, Entrada_C = logic_gate_or(0,0,0)
 if Entrada_A or Entrada_B or Entrada_C == 1: 
     print('Saída OR:', 1)
 else: print('Saída OR:', 0)
 
+# -x- 
+
+def logic_gate_or2(a, b, c, d):
+    if a or b or c or d == 1:
+        return 1
+    else:
+        return 0
+    
+Saída = logic_gate_or2(1, 0, 1, 0)
+print('Saída OR2:', Saída)
+    
 
 # Logic gate NAND
 # Composto por uma porta lógica AND, em que se é aplicado a lógica 'NOT'(Qual será um simbolo circular em 
@@ -46,6 +57,17 @@ def  logic_gate_nand(a, b, c):
 Entrada_A, Entrada_B, Entrada_C = logic_gate_nand(1, 1, 1)
 Saída = 0 if Entrada_A and Entrada_B and Entrada_C == 1 else 1
 print('Saída NAND:', Saída)
+
+# -x-
+
+def logic_gate_nand2(a, b, c):
+    if a and b and c == 1:
+        return 0
+    else:
+        return 1
+
+Saída = logic_gate_nand2(1, 1, 1)
+print('Saída NAND2:', Saída)
 
 
 # Logic gate Xor
@@ -98,7 +120,7 @@ Entrada_B = 1
 Saída = xnor2(Entrada_A, Entrada_B)
 print('Saída XNOR2:', Saída)
 
-# Refazendo da forma que eu aderi antes.
+# -x-
 
 def xnor3(a, b):
     return (a**0, b-1)
