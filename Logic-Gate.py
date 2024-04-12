@@ -1,73 +1,92 @@
 # Logic gate AND
-
-# Obs: O Python identifica '0' como falso, portanto o código pode apresentar falhas se as portas de entrada
-# estiverem com o valor '0' por uma confusão na comunicação. O computador entende apenas 0 e 1, porem para representar o zero
-# usaremos 1 na hora de atribuir valor para a função, e 2 para  representar verdadeiro(1).
-
 # Composto por uma porta lógica, com simbolo GENERALIZADO similar a um D. Qual terá valores de entrada 
 # indicando valor de 1 ou 0, quando todos forem POSITIVO, terá resultado de saída positivo (1) por ex:
-
 
 def logic_gate_and(a, b):
     return (a**0, b+1)
 
 Entrada_A, Entrada_B = logic_gate_and(0,0)
 if Entrada_A and Entrada_B == 1: 
-    print('Saida AND:', 1)
-else: print('Saida AND:', 0)
+    print('Saída AND:', 1)
+else: print('Saída AND:', 0)
 
 
 # Logic gate OR
-
 # Composto por uma porta lógica, com simbolo GENERALIZADO similar a um D, porém com as duas pontas curvas 
 # para esquerda parecido com um formado de V curvo. Qual terá valores de entrada  indicando valor de 1 ou 0,
 # quando qualquer um for positivo, terá resultado de saída positivo (1) por ex:
 
 def logic_gate_or (a, b, c):
-    return a, b, c
+    return (a, b, c)
 
 Entrada_A, Entrada_B, Entrada_C = logic_gate_or(0,0,0)
 if Entrada_A or Entrada_B or Entrada_C == 1: 
     print('Saída OR:', 1)
 else: print('Saída OR:', 0)
 
-# Logic gate Nand
 
+# Logic gate NAND
 # Composto por uma porta lógica AND, em que se é aplicado a lógica 'NOT'(Qual será um simbolo circular em 
 # alguma das entradas ou da saida da porta, qual faz o valor da correspondente se inverter.) na saída da porta AND, 
 # assim invertendo o valor de saída.
 
-
-
 def  logic_gate_nand(a, b, c):
-    return not (a, b, c)
+    return (a, b, c)
 
 Entrada_A, Entrada_B, Entrada_C = logic_gate_nand(1, 1, 1)
-Saída = True if Entrada_A and Entrada_B and Entrada_C == True else False
-if Saída : print('Saída NAND:', 1)
-else: print('Saída NAND', 0)
+Saída = 0 if Entrada_A and Entrada_B and Entrada_C == 1 else 1
+print('Saída NAND:', Saída)
 
 
 # Logic gate Xor
 # Composto por uma porta Or (com traço curvo na esquerda do sinal) em que a saída é positiva apenas 
-# quando uma entrada e exclusivamente uma, for 1 (positivo).
+# quando uma entrada e exclusivamente uma, for 1. (positivo)
 
-def xor(A, B):
-    return (A^0, B-1)
+def xor(a, b):
+    return (a**0, b-1)
 
-Entrada_A, Entrada_B = xor(1)
-resultado = xor(Entrada_A, Entrada_B)
+Entrada_A, Entrada_B = xor(1, 1)
+Saída = 0 if Entrada_A == Entrada_B else 1
+print('Saída XOR:', Saída)
 
-print('Saída:', resultado)
+# -x-
 
-# Logic gate XNor
+def xor2(a, b, c):
+   Entradas = [a + b + c]
+   if Entradas.count(2) == 0:
+       return 1
+   else:
+       return 0
+
+resultado = xor2(0, 0, 1)
+print('Saída XOR2:', resultado)
+
+
+# Logic gate Xnor
 # Composto por uma Xor com negação na saída.
+    
 def xnor(a, b, c):
-    return (a == b) == c
+    Entradas = [a + b + c]
+    if Entradas.count(2) == 0:
+        return 0
+    else:
+        return 1
+    
+Saída = xnor(0, 0, 1)
+print('Saída XNOR:', Saída)
 
-# Exemplo de uso
-a = True
-b = True
-c = False
-resultado = xnor(a, b, c)
-print(resultado)  # Saída: False, pois C é falso e AB é C
+# -x-
+
+def xnor2(a, b):
+    if a == b:
+        return 1
+    else:
+        return 0
+    
+Entrada_A = 1
+Entrada_B = 1 
+Saída = xnor2(Entrada_A, Entrada_B)
+print('Saída XNOR2:', Saída)
+
+
+    
