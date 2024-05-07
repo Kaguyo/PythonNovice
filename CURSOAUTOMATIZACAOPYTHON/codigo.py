@@ -7,14 +7,14 @@
 import pyautogui
 import time # biblioteca com sistema de timing
 
-pyautogui.PAUSE = 0.7
+pyautogui.PAUSE = 1
 # Alguns comandos do pyautogui:
     # pyautogui.click -> clicar com o mouse
     # pyautogui.write -> escrever um texto
     # pyautogui.press -> pressionar uma tecla do teclado
     # pyautogui.hoykey -> apertar um conjunto de teclas (Ctrl C, Ctrl V, Alt Tab)
         #Source : https://pyautogui.readthedocs.io/en/latest/quickstart.html
-        
+
 # abrir o navegador (Firefox)
 pyautogui.press("win")
 pyautogui.write("mozila")
@@ -40,6 +40,10 @@ pyautogui.press("enter")
 
 time.sleep(3)
 
+pyautogui.click(x=572, y=290)
+time.sleep(0.3)
+pyautogui.click(x=572, y=290)
+
 
 
 #3. Abrir/impportar a base de dados de produtos para cadastrar
@@ -56,12 +60,11 @@ print(tabela_produtos)
 #4. Cadastrar um produto
 
 for linha in tabela_produtos.index:
-    codigo = str(tabela_produtos.loc[linha, "codigo"])
-        # Preencher formulário
-            # Passa para proximo campo
-    pyautogui.press("tab")
+    time.sleep(0.2)
+    pyautogui.click(x=572, y=290)
+    codigo = str(tabela_produtos.loc[linha, "codigo"]) # O B S !!!-> Forma alternativa de aplicar o resto dos comandos.                   # O B S
         # Preenche código de produto
-    pyautogui.write(codigo)
+    pyautogui.write(codigo)                            # O B S !!!-> Forma alternativa de aplicar o resto dos comandos.
         # Passa para proximo campo
     pyautogui.press("tab")
         # Preencher marca
@@ -95,4 +98,3 @@ for linha in tabela_produtos.index:
     pyautogui.press("home")
 
 #5. Repetir Isso tudo até acabar a lista de produtos
-
