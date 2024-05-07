@@ -88,7 +88,6 @@ for linha in tabela_produtos.index:
     obs = str(tabela_produtos.loc[linha, "obs"])
     if obs != "nan":
         pyautogui.write(obs)
-        
         # Passa para proximo campo
     pyautogui.press("tab")
     pyautogui.press("enter")
