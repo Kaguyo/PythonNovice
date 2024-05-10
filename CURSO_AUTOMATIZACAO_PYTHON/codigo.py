@@ -21,7 +21,7 @@ pyautogui.write("mozila")
 pyautogui.press("enter")
 
 # entrar no site do sistema
-
+time.sleep(4)
 pyautogui.write("https://dlp.hashtagtreinamentos.com/python/intensivao/login")
 pyautogui.press("enter")
 
