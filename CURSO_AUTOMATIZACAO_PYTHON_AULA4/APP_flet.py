@@ -26,10 +26,17 @@ def main(page):
     
     chat = ft.Column()
 
+
+
+
+        # S T A R T     T U N E L 
+
+
     # Função de comunicação entre aparelhos
     def enviar_mensagem_tunel(mensagem):
-        print("Mensagem enviada no tunel")
-        print(mensagem)
+        texto_chat = ft.Text(mensagem)
+        chat.controls.append(texto_chat)
+        page.update()
     
     page.pubsub.subscribe(enviar_mensagem_tunel)
     
@@ -38,8 +45,6 @@ def main(page):
         nome_usuario = user_name_field.value
         mensagem = f"{nome_usuario}: {texto_mensagem}"
         page.pubsub.send_all(mensagem)
-        texto_chat = ft.Text(f"{nome_usuario}: {texto_mensagem}")
-        chat.controls.append(texto_chat)
         message_field.value = ""
         page.update()
         
@@ -53,6 +58,8 @@ def main(page):
         popup.open = False
         page.add(chat)
         page.add(linha_mensagem)
+        mensagem = f"{user_name_field.value} joined the chat"
+        page.pubsub.send_all(mensagem)
         page.update()
         
     join_button =  ft.ElevatedButton("Enter chat", on_click=chat_enter)
